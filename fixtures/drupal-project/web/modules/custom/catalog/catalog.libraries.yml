@@ -1,0 +1,11 @@
+catalog:
+  css:
+    component:
+      dist/css/main.css: {}
+  js:
+    dist/js/main.js:
+      attributes:
+        type: module
+  dependencies:
+    - core/drupal
+    - core/once

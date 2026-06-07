@@ -1,0 +1,15 @@
+@use "variables" as *;
+@use "abstracts/mixins" as *;
+@import "example-package/styles.css";
+
+.catalog {
+  @include card;
+
+  color: $catalog-color;
+  background-image: url("../images/icons/search.svg");
+}
+
+@font-face {
+  font-family: Fixture;
+  src: url("../fonts/fixture.woff2") format("woff2");
+}

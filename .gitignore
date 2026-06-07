@@ -1,0 +1,8 @@
+/node_modules/
+/.idea/
+/coverage/
+/.drupal-assets-dev/
+/fixtures/drupal-project/web/modules/custom/**/dist/
+/fixtures/drupal-project/web/themes/custom/**/dist/
+*.tgz
+.DS_Store

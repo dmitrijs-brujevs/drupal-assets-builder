@@ -1,0 +1,9 @@
+{
+  "name": "example/drupal-project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@scope/library",
+  "version": "1.0.0",
+  "module": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./icon.svg": "./icon.svg"
+  }
+}

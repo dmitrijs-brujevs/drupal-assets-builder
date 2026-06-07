@@ -1,0 +1,11 @@
+{
+  "name": "example-package",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./icon.svg": "./icon.svg",
+    "./styles.css": "./styles.css",
+    "./feature": "./feature.js"
+  }
+}

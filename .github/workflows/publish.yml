@@ -1,0 +1,46 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    if: startsWith(github.event.release.tag_name, 'v')
+    runs-on: ubuntu-latest
+    environment: npm
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          cache: npm
+      - run: npm install --global npm@11
+      - name: Verify release tag and package version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          node -e "
+            const tag = process.env.RELEASE_TAG;
+            const version = require('./package.json').version;
+            if (!/^v[0-9]+\.[0-9]+\.[0-9]+$/.test(tag)) {
+              throw new Error('Release tag must match vX.Y.Z');
+            }
+            if (tag !== 'v' + version) {
+              throw new Error('Release tag ' + tag + ' does not match package version ' + version);
+            }
+          "
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npm run format
+      - run: npm run build
+      - run: npm pack --dry-run
+      - run: npm publish --access public
