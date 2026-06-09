@@ -128,6 +128,11 @@ export default {
   images: {
     optimize: false,
   },
+  quality: {
+    eslintConfig: null,
+    prettierConfig: null,
+    stylelintConfig: null,
+  },
   verbose: false,
 };
 ```
@@ -135,6 +140,14 @@ export default {
 Paths are resolved from the project root. The config is an executable JavaScript module and must be
 treated as trusted project code. The builder does not provide a sandbox for config evaluation.
 Image optimization is reserved for an opt-in implementation and is disabled by default.
+
+`include` and `exclude` match extension roots relative to `webRoot`, such as
+`modules/custom/catalog` or `themes/custom/example`. They apply consistently to asset builds,
+watch mode, linting, and formatting.
+
+Quality config paths are optional and project-relative. ESLint uses the builder config by default.
+Stylelint uses the first project config it finds, falling back to the builder config. Prettier uses
+its normal config discovery unless `quality.prettierConfig` is set explicitly.
 
 ## Sass, JavaScript, Images, and Fonts
 

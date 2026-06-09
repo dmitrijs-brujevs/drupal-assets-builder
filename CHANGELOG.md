@@ -7,6 +7,17 @@ project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-06-09
+
+### Added
+
+- Added project-level quality configuration for ESLint, Stylelint, and Prettier.
+- Added Stylelint project config discovery with fallback to the builder's default config.
+
+### Changed
+
+- `include` and `exclude` extension filters now apply consistently to linting and formatting.
+
 ## [1.0.0] - 2026-06-07
 
 ### Added
@@ -22,5 +33,6 @@ project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   now emitted under a package-relative path (e.g. `images/example-package/icon.svg`) so output
   names are stable and unique across packages.
 
-[Unreleased]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/releases/tag/v1.0.0

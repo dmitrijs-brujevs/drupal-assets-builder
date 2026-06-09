@@ -29,6 +29,11 @@ export const DEFAULT_CONFIG = Object.freeze({
   images: {
     optimize: false,
   },
+  quality: {
+    eslintConfig: null,
+    prettierConfig: null,
+    stylelintConfig: null,
+  },
   verbose: false,
 });
 
@@ -42,6 +47,7 @@ function mergeConfig(base, override) {
     sass: { ...base.sass, ...override.sass },
     aliases: { ...base.aliases, ...override.aliases },
     images: { ...base.images, ...override.images },
+    quality: { ...base.quality, ...override.quality },
   };
 }
 
@@ -98,6 +104,18 @@ export async function loadConfig(options = {}) {
       loadPaths: config.sass.loadPaths.map((entry) =>
         path.resolve(projectRoot, entry),
       ),
+    },
+    quality: {
+      ...config.quality,
+      eslintConfig: config.quality.eslintConfig
+        ? path.resolve(projectRoot, config.quality.eslintConfig)
+        : null,
+      prettierConfig: config.quality.prettierConfig
+        ? path.resolve(projectRoot, config.quality.prettierConfig)
+        : null,
+      stylelintConfig: config.quality.stylelintConfig
+        ? path.resolve(projectRoot, config.quality.stylelintConfig)
+        : null,
     },
   };
 }
