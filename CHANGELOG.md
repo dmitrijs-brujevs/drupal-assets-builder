@@ -7,6 +7,13 @@ project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-06-10
+
+### Fixed
+
+- Fixed `dev` mode cache invalidation for Drupal source entry modules so changed SCSS and
+  JavaScript files are re-served by the Vite development server without restarting the process.
+
 ## [1.1.0] - 2026-06-09
 
 ### Added
@@ -33,6 +40,7 @@ project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   now emitted under a package-relative path (e.g. `images/example-package/icon.svg`) so output
   names are stable and unique across packages.
 
-[Unreleased]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/dmitrijs-brujevs/drupal-assets-builder/releases/tag/v1.0.0

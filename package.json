@@ -1,6 +1,6 @@
 {
   "name": "drupal-assets-builder",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A single Vite-based asset builder for custom modules and themes in Drupal projects.",
   "type": "module",
   "license": "MIT",

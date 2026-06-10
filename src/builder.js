@@ -62,7 +62,9 @@ export async function dev(options = {}) {
       "No SCSS or JavaScript entries were discovered",
     );
   }
-  const server = await createServer(createDevViteConfig(extensions, config));
+  const server = await createServer(
+    createDevViteConfig(extensions, config, entries),
+  );
   await server.listen();
   server.printUrls();
   if (config.verbose) {
